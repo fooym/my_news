@@ -92,7 +92,9 @@ class _WelcomePageState extends State<WelcomePage> {
         shape: RoundedRectangleBorder(
           borderRadius: Radii.k6pxRadius,
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, "/sign-in");
+        },
       ),
     );
   }
