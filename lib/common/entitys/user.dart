@@ -35,14 +35,14 @@ String userLoginResponseEntityToJson(UserLoginResponseEntity data) => json.encod
 /// 登录响应
 class UserLoginResponseEntity {
   UserLoginResponseEntity({
-    required this.accessToken,
-    required this.channels,
-    required this.displayName,
+    this.accessToken,
+    this.channels,
+    this.displayName,
   });
 
-  String accessToken;
-  List<String> channels;
-  String displayName;
+  String? accessToken;
+  List<String>? channels;
+  String? displayName;
 
   factory UserLoginResponseEntity.fromJson(Map<String, dynamic> json) => UserLoginResponseEntity(
     accessToken: json["accessToken"],
@@ -52,7 +52,7 @@ class UserLoginResponseEntity {
 
   Map<String, dynamic> toJson() => {
     "accessToken": accessToken,
-    "channels": List<dynamic>.from(channels.map((x) => x)),
+    "channels": List<dynamic>.from(channels!.map((x) => x)),
     "displayName": displayName,
   };
 }

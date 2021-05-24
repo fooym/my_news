@@ -153,6 +153,7 @@ class _SignInPageState extends State<SignInPage> {
                     UserLoginResponseEntity res = await UserAPI.login(params: params);
                     print(userLoginResponseEntityToJson(res));
 
+                    Navigator.pushNamed(context, "/app");
 
                   },
                   gbColor: AppColors.primaryElement,

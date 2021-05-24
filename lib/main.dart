@@ -3,9 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_news/pages/welcome/welcome.dart';
 import 'package:my_news/routes.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'global.dart';
+
+void main() => Global.init().then((e) => runApp(MyApp()));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

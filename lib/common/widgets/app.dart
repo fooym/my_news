@@ -4,6 +4,8 @@ import '../values/values.dart';
 
 AppBar transparentAppBar({
   required BuildContext context,
+  Widget? title,
+  Widget? leading,
   List<Widget>? actions,
 }) {
   return AppBar(
