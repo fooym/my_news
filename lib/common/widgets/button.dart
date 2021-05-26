@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../utils/utils.dart';
-import '../utils/utils.dart';
-import '../utils/utils.dart';
 import '../values/values.dart';
 
 /// 扁平圆角按钮
 Widget btnFlatButtonWidget({
-  required VoidCallback onPressed,
+  @required VoidCallback onPressed,
   double width = 140,
   double height = 44,
   Color gbColor = AppColors.primaryElement,
@@ -43,10 +41,10 @@ Widget btnFlatButtonWidget({
 
 /// 第三方按钮
 Widget btnFlatButtonBorderOnlyWidget({
-  required VoidCallback onPressed,
+  @required VoidCallback onPressed,
   double width = 88,
   double height = 44,
-  required String iconFileName,
+  @required String iconFileName,
 }) {
   return Container(
     width: duSetWidth(width),

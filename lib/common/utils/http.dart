@@ -15,14 +15,14 @@ class HttpUtil {
 
   CancelToken cancelToken = new CancelToken();
 
-  late Dio dio;
+  Dio dio;
   HttpUtil._internal() {
 // BaseOptions、Options、RequestOptions 都可以配置参数，优先级别依次递增，且可以根据优先级别覆盖参数
     BaseOptions options = new BaseOptions(
       // 请求基地址,可以包含子路径
       baseUrl: SERVER_API_URL,
 
-      // baseUrl: storage.read(key: STORAGE_KEY_APIURL) ?? SERVICE_API_BASEURL,
+      // baseUrl: storage.read(key: STORAGE_KEY_APIURL)  SERVICE_API_BASEURL,
       //连接服务器超时时间，单位是毫秒.
       connectTimeout: 10000,
 
@@ -196,7 +196,7 @@ class HttpUtil {
   /// 读取本地配置
   Map<String, dynamic> getAuthorizationHeader() {
     var headers;
-    String? token = Global.profile.accessToken;
+    String token = Global.profile.accessToken;
     if (token != null) {
       headers = Options(headers: {
         'Authorization': 'Bearer $token',
@@ -213,11 +213,11 @@ class HttpUtil {
   Future get(
     String path, {
     dynamic params,
-    Options? options,
+    Options options,
     bool refresh = false,
     bool noCache = !CACHE_ENABLE,
     bool list = false,
-    String? cacheKey,
+    String cacheKey,
   }) async {
     try {
       Options requestOptions = options ?? Options();
@@ -243,7 +243,7 @@ class HttpUtil {
   }
 
   /// restful post 操作
-  Future post(String path, {dynamic params, Options? options}) async {
+  Future post(String path, {dynamic params, Options options}) async {
     Options requestOptions = options ?? Options();
     Map<String, dynamic> _authorization = getAuthorizationHeader();
     if (_authorization != null) {
@@ -255,7 +255,7 @@ class HttpUtil {
   }
 
   /// restful put 操作
-  Future put(String path, {dynamic params, Options? options}) async {
+  Future put(String path, {dynamic params, Options options}) async {
     Options requestOptions = options ?? Options();
     Map<String, dynamic> _authorization = getAuthorizationHeader();
     if (_authorization != null) {
@@ -267,7 +267,7 @@ class HttpUtil {
   }
 
   /// restful patch 操作
-  Future patch(String path, {dynamic params, Options? options}) async {
+  Future patch(String path, {dynamic params, Options options}) async {
     Options requestOptions = options ?? Options();
     Map<String, dynamic> _authorization = getAuthorizationHeader();
     if (_authorization != null) {
@@ -279,7 +279,7 @@ class HttpUtil {
   }
 
   /// restful delete 操作
-  Future delete(String path, {dynamic params, Options? options}) async {
+  Future delete(String path, {dynamic params, Options options}) async {
     Options requestOptions = options ?? Options();
     Map<String, dynamic> _authorization = getAuthorizationHeader();
     if (_authorization != null) {
@@ -291,7 +291,7 @@ class HttpUtil {
   }
 
   /// restful post form 表单提交操作
-  Future postForm(String path, {dynamic params, Options? options}) async {
+  Future postForm(String path, {dynamic params, Options options}) async {
     Options requestOptions = options ?? Options();
     Map<String, dynamic> _authorization = getAuthorizationHeader();
     if (_authorization != null) {
@@ -308,7 +308,7 @@ class HttpUtil {
 class ErrorEntity implements Exception {
   int code;
   String message;
-  ErrorEntity({required this.code, required this.message});
+  ErrorEntity({this.code, this.message});
 
   @override
   String toString() {

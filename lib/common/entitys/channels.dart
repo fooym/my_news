@@ -4,8 +4,8 @@ class ChannelResponseEntity {
   String title;
 
   ChannelResponseEntity({
-    required this.code,
-    required this.title,
+    this.code,
+    this.title,
   });
 
   factory ChannelResponseEntity.fromJson(Map<String, dynamic> json) =>

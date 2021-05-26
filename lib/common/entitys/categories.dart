@@ -4,8 +4,8 @@ class CategoryResponseEntity {
   String title;
 
   CategoryResponseEntity({
-    required this.code,
-    required this.title,
+    this.code,
+    this.title,
   });
 
   factory CategoryResponseEntity.fromJson(Map<String, dynamic> json) =>

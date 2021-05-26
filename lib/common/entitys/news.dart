@@ -6,10 +6,10 @@ class NewsPageListRequestEntity {
   String keyword;
 
   NewsPageListRequestEntity({
-    required this.categoryCode,
-    required this.channelCode,
-    required this.tag,
-    required this.keyword,
+    this.categoryCode,
+    this.channelCode,
+    this.tag,
+    this.keyword,
   });
 }
 
@@ -22,11 +22,11 @@ class NewsPageListResponseEntity {
   List<NewsItem> items;
 
   NewsPageListResponseEntity({
-    required this.counts,
-    required this.pagesize,
-    required this.pages,
-    required this.page,
-    required this.items,
+    this.counts,
+    this.pagesize,
+    this.pages,
+    this.page,
+    this.items,
   });
 
   factory NewsPageListResponseEntity.fromJson(Map<String, dynamic> json) =>
@@ -58,13 +58,13 @@ class NewsItem {
   String url;
 
   NewsItem({
-    required this.id,
-    required this.title,
-    required this.category,
-    required this.thumbnail,
-    required this.author,
-    required this.addtime,
-    required this.url,
+    this.id,
+    this.title,
+    this.category,
+    this.thumbnail,
+    this.author,
+    this.addtime,
+    this.url,
   });
 
   factory NewsItem.fromJson(Map<String, dynamic> json) => NewsItem(
@@ -96,10 +96,10 @@ class NewsRecommendRequestEntity {
   String keyword;
 
   NewsRecommendRequestEntity({
-    required this.categoryCode,
-    required this.channelCode,
-    required this.tag,
-    required this.keyword,
+    this.categoryCode,
+    this.channelCode,
+    this.tag,
+    this.keyword,
   });
 }
 
@@ -114,13 +114,13 @@ class NewsRecommendResponseEntity {
   String id;
 
   NewsRecommendResponseEntity({
-    required this.thumbnail,
-    required this.title,
-    required this.category,
-    required this.addtime,
-    required this.author,
-    required this.url,
-    required this.id,
+    this.thumbnail,
+    this.title,
+    this.category,
+    this.addtime,
+    this.author,
+    this.url,
+    this.id,
   });
 
   factory NewsRecommendResponseEntity.fromJson(Map<String, dynamic> json) =>

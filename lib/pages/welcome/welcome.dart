@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_news/common/utils/utils.dart';
 import 'package:my_news/common/values/values.dart';
 
 class WelcomePage extends StatefulWidget {
-  WelcomePage({Key? key}) : super(key: key);
+  WelcomePage({Key key}) : super(key: key);
 
   @override
   _WelcomePageState createState() => _WelcomePageState();
@@ -101,6 +102,10 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // 高度去掉 顶部、底部 导航
+    ScreenUtil.init(context,
+        width: 375, height: 812 - 44 - 34, allowFontScaling: true);
+
     return Scaffold(
       body: Center(
         child: Column(

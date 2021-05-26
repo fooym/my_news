@@ -27,7 +27,7 @@ class _ApplicationPageState extends State<ApplicationPage>
   ];
 
   // 页控制器
-  PageController? _pageController;
+  PageController _pageController;
 
   // 底部导航项目
   final List<BottomNavigationBarItem> _bottomTabs = <BottomNavigationBarItem>[
@@ -83,7 +83,7 @@ class _ApplicationPageState extends State<ApplicationPage>
 
   // tab栏动画
   void _handleNavBarTap(int index) {
-    _pageController!.animateToPage(index,
+    _pageController.animateToPage(index,
         duration: const Duration(milliseconds: 200), curve: Curves.ease);
   }
 
@@ -102,7 +102,7 @@ class _ApplicationPageState extends State<ApplicationPage>
 
   @override
   void dispose() {
-    _pageController!.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -119,14 +119,14 @@ class _ApplicationPageState extends State<ApplicationPage>
             fontWeight: FontWeight.w600,
           ),
         ),
-        leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              color: AppColors.primaryText,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            }),
+        // leading: IconButton(
+        //     icon: Icon(
+        //       Icons.arrow_back,
+        //       color: AppColors.primaryText,
+        //     ),
+        //     onPressed: () {
+        //       Navigator.pop(context);
+        //     }),
         actions: <Widget>[
           IconButton(
             icon: Icon(

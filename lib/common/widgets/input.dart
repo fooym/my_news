@@ -2,13 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/utils.dart';
-import '../utils/utils.dart';
 import '../values/values.dart';
 
 Widget inputTextEdit({
-  required TextEditingController controller,
+  @required TextEditingController controller,
   TextInputType keyboardType = TextInputType.text,
-  String? hintText,
+  String hintText,
   bool isPassword = false,
   double marginTop = 15,
 }) {

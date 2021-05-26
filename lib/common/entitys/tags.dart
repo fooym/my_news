@@ -7,11 +7,11 @@ class TagRequestEntity {
   String newsID;
 
   TagRequestEntity({
-    required this.categoryCode,
-    required this.channelCode,
-    required this.tag,
-    required this.keyword,
-    required this.newsID,
+    this.categoryCode,
+    this.channelCode,
+    this.tag,
+    this.keyword,
+    this.newsID,
   });
 }
 
@@ -20,7 +20,7 @@ class TagResponseEntity {
   String tag;
 
   TagResponseEntity({
-    required this.tag,
+    this.tag,
   });
 
   factory TagResponseEntity.fromJson(Map<String, dynamic> json) =>

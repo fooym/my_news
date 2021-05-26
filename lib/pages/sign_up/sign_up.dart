@@ -6,15 +6,7 @@ import 'package:my_news/common/widgets/input.dart';
 import 'package:my_news/common/widgets/toast.dart';
 
 import '../../common/utils/screen.dart';
-import '../../common/utils/screen.dart';
-import '../../common/utils/screen.dart';
-import '../../common/utils/screen.dart';
-import '../../common/utils/screen.dart';
-import '../../common/utils/screen.dart';
-import '../../common/utils/screen.dart';
 import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/values/colors.dart';
 import '../../common/values/values.dart';
 
 class SignUpPage extends StatefulWidget {

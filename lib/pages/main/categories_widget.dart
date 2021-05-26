@@ -5,9 +5,9 @@ import 'package:my_news/common/utils/utils.dart';
 import 'package:my_news/common/values/values.dart';
 
 Widget newsCategoriesWidget(
-    {List<CategoryResponseEntity>? categories,
-      String? selCategoryCode,
-      Function(CategoryResponseEntity)? onTap}) {
+    {List<CategoryResponseEntity> categories,
+      String selCategoryCode,
+      Function(CategoryResponseEntity) onTap}) {
   return categories == null
       ? Container()
       : SingleChildScrollView(
@@ -30,7 +30,7 @@ Widget newsCategoriesWidget(
                 fontWeight: FontWeight.w600,
               ),
             ),
-            onTap: () => onTap!(item),
+            onTap: () => onTap(item),
           ),
         );
       }).toList(),

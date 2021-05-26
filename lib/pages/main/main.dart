@@ -11,12 +11,12 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
 
-  late NewsPageListResponseEntity _newsPageList; // 新闻翻页
-  late NewsRecommendResponseEntity _newsRecommend; // 新闻推荐
-  late List<CategoryResponseEntity> _categories; // 分类
-  late List<ChannelResponseEntity> _channels; // 频道
+  NewsPageListResponseEntity _newsPageList; // 新闻翻页
+  NewsRecommendResponseEntity _newsRecommend; // 新闻推荐
+  List<CategoryResponseEntity> _categories; // 分类
+  List<ChannelResponseEntity> _channels; // 频道
 
-  late String _selCategoryCode; // 选中的分类Code
+  String _selCategoryCode; // 选中的分类Code
 
   @override
   void initState() {

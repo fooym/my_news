@@ -6,7 +6,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../utils/utils.dart';
 
 Future<bool> toastInfo({
-  required String msg,
+  @required String msg,
   Color backgroundColor = Colors.black,
   Color textColor = Colors.white,
 }) async {

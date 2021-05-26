@@ -4,19 +4,7 @@ import 'package:my_news/common/entitys/entitys.dart';
 import 'package:my_news/common/widgets/button.dart';
 import 'package:my_news/common/widgets/input.dart';
 
-import 'package:my_news/common/widgets/toast.dart';
-
 import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/utils/utils.dart';
-import '../../common/values/colors.dart';
-import '../../common/values/values.dart';
 import '../../common/values/values.dart';
 
 class SignInPage extends StatefulWidget {
@@ -32,7 +20,7 @@ class _SignInPageState extends State<SignInPage> {
   Widget _buildLogo() {
     return Container(
       width: duSetWidth(110),
-      margin: EdgeInsets.only(top: duSetHeight(44 + 40)), // 顶部系统栏 44px
+      margin: EdgeInsets.only(top: duSetHeight(44.0 + 40)), // 顶部系统栏 44px
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -134,27 +122,27 @@ class _SignInPageState extends State<SignInPage> {
                 Spacer(),
                 btnFlatButtonWidget(
                   onPressed: () async {
-                    if (!duIsEmail(_emailController.value.text)) {
-                      toastInfo(msg: "请正确输入邮件");
-                      return;
-                    }
-
-                    if (!duCheckStringLength(
-                        _passwordController.value.text, 6)) {
-                      toastInfo(msg: "密码不能少于6位");
-                      return;
-                    }
+                    // if (!duIsEmail(_emailController.value.text)) {
+                    //   toastInfo(msg: "请正确输入邮件");
+                    //   return;
+                    // }
+                    //
+                    // if (!duCheckStringLength(
+                    //     _passwordController.value.text, 6)) {
+                    //   toastInfo(msg: "密码不能少于6位");
+                    //   return;
+                    // }
 
                     UserLoginRequestEntity params = UserLoginRequestEntity(
                       email: _emailController.value.text,
                       password: duSHA256(_passwordController.value.text),
                     );
 
-                    UserLoginResponseEntity res = await UserAPI.login(params: params);
+                    UserLoginResponseEntity res =
+                        await UserAPI.login(params: params);
                     print(userLoginResponseEntityToJson(res));
 
                     Navigator.pushNamed(context, "/app");
-
                   },
                   gbColor: AppColors.primaryElement,
                   title: "Sign in",
