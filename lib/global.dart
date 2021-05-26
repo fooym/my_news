@@ -36,11 +36,11 @@ class Global {
     // http 缓存
 
     // android 状态栏为透明沉浸
-    if (Platform.isAndroid) {
-      SystemUiOverlayStyle systemUiOverlayStyle =
-          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
-      SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
-    }
+    // if (Platform.isAndroid) {
+    //   SystemUiOverlayStyle systemUiOverlayStyle =
+    //       SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+    //   SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    // }
   }
 
   static Future<bool> saveProfile(UserLoginResponseEntity userResponse) {

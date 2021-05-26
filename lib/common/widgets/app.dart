@@ -11,16 +11,10 @@ AppBar transparentAppBar({
   return AppBar(
     backgroundColor: Colors.transparent,
     elevation: 0,
-    title: Text(''),
-    leading: IconButton(
-      icon: Icon(
-        Icons.arrow_back,
-        color: AppColors.primaryText,
-      ),
-      onPressed: () {
-        Navigator.pop(context);
-      },
+    title: Center(
+      child: title,
     ),
+    leading: leading,
     actions: actions,
   );
 }

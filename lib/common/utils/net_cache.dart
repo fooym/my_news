@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:dio/dio.dart';
+import 'package:my_news/common/utils/utils.dart';
 
 import '../values/values.dart';
 
@@ -31,6 +32,9 @@ class NetCache extends Interceptor {
     // refresh标记是否是"下拉刷新"
     bool refresh = options.extra["refresh"] == true;
 
+    // 是否磁盘缓存
+    bool cacheDisk = options.extra["cacheDisk"] == true;
+
     // 如果是下拉刷新，先删除相关缓存
     if (refresh) {
       if (options.extra["list"] == true) {
@@ -40,6 +44,12 @@ class NetCache extends Interceptor {
         // 如果不是列表，则只删除uri相同的缓存
         delete(options.uri.toString());
       }
+
+      // 删除磁盘缓存
+      if (cacheDisk) {
+        await StorageUtil().remove(options.uri.toString());
+      }
+
       return options;
     }
 

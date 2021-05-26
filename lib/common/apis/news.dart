@@ -6,15 +6,19 @@ import 'package:my_news/common/utils/utils.dart';
 class NewsAPI {
   /// 翻页
   static Future<NewsPageListResponseEntity> newsPageList(
-      {NewsPageListRequestEntity params}) async {
-    var response = await HttpUtil().get('/news', params: params);
+      {NewsPageListRequestEntity params,bool refresh = false,
+        bool cacheDisk = false,}) async {
+    var response = await HttpUtil().get('/news', params: params?.toJson(), refresh: refresh, cacheDisk: cacheDisk);
     return NewsPageListResponseEntity.fromJson(response);
   }
 
   /// 推荐
   static Future<NewsRecommendResponseEntity> newsRecommend(
-      {NewsRecommendRequestEntity params}) async {
-    var response = await HttpUtil().get('/news/recommend', params: params);
+      {NewsRecommendRequestEntity params,
+      bool refresh = false,
+      bool cacheDisk = false,}) async {
+    var response = await HttpUtil().get('/news/recommend', params: params?.toJson(),
+    refresh: refresh, cacheDisk: cacheDisk);
     return NewsRecommendResponseEntity.fromJson(response);
   }
 
