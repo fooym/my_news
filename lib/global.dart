@@ -14,6 +14,13 @@ class Global {
     accessToken: null,
   );
 
+  /// 是否第一次打开
+
+  static bool isFirstOpen = false;
+
+  /// 是否离线登录
+  static bool isOfflineLogin = false;
+
   /// 是否 release
   static bool get isRelease => bool.fromEnvironment("dart.vm.product");
 
@@ -27,13 +34,18 @@ class Global {
     await StorageUtil.init();
     HttpUtil();
 
+    // 读取设备第一次打开
+    isFirstOpen = !StorageUtil().getBool(STORAGE_DEVICE_ALREADY_OPEN_KEY);
+    if (isFirstOpen) {
+      StorageUtil().setBool(STORAGE_DEVICE_ALREADY_OPEN_KEY, true);
+    }
+
     // 读取离线用户信息
     var _profileJSON = StorageUtil().getJSON(STORAGE_USER_PROFILE_KEY);
     if (_profileJSON != null) {
       profile = UserLoginResponseEntity.fromJson(_profileJSON);
+      isOfflineLogin = true;
     }
-
-    // http 缓存
 
     // android 状态栏为透明沉浸
     // if (Platform.isAndroid) {

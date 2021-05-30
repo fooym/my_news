@@ -3,6 +3,7 @@ import 'package:my_news/common/apis/apis.dart';
 import 'package:my_news/common/entitys/entitys.dart';
 import 'package:my_news/common/widgets/button.dart';
 import 'package:my_news/common/widgets/input.dart';
+import 'package:my_news/global.dart';
 
 import '../../common/utils/utils.dart';
 import '../../common/values/values.dart';
@@ -141,6 +142,7 @@ class _SignInPageState extends State<SignInPage> {
                     UserLoginResponseEntity res =
                         await UserAPI.login(params: params);
                     print(userLoginResponseEntityToJson(res));
+                    Global.saveProfile(res);
 
                     Navigator.pushNamed(context, "/app");
                   },
